@@ -6,8 +6,9 @@
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["react-hooks", "react"],
+  "plugins": ["react-hooks", "react", "@typescript-eslint"],
   "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": [
       "warn",
@@ -16,7 +17,6 @@
       }
     ],
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "react/jsx-uses-vars": "error"
   }
 }
