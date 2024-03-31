@@ -1,5 +1,12 @@
 {
-    "products": {
-      "cart": "Them gio hang"
-    }
+  "sign-in": {
+    "title": "Đăng nhập",
+    "subTitle": "Đăng nhập tài khoản của bạn",
+    "username": "Tài khoản",
+    "password": "Mật khẩu",
+    "rememberMe": "Nhớ tài khoản",
+    "enterUsername": "Nhập tài khoản",
+    "enterPassword": "Nhập mật khẩu",
+    "submit": "Đăng nhập"
+  }
 }

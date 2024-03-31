@@ -1,5 +1,12 @@
 {
-    "products": {
-      "cart": "Add to Cart"
-    }
+  "sign-in": {
+    "title": "Sign in",
+    "subTitle": "Enter your account",
+    "username": "Username",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "enterUsername": "Enter username",
+    "enterPassword": "Enter password",
+    "submit": "Sign in"
   }
+}
