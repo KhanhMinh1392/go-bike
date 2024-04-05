@@ -8,5 +8,18 @@
     "enterUsername": "Nhập tài khoản",
     "enterPassword": "Nhập mật khẩu",
     "submit": "Đăng nhập"
+  },
+  "header": {
+    "stationList": "Danh sách trạm",
+    "services": "Dịch vụ",
+    "guides": "Hướng dẫn",
+    "prices": "Bảng giá",
+    "benefits": "Ưu đãi",
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "vietnamese": "Tiếng Việt",
+    "english": "Tiếng Anh",
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất"
   }
 }

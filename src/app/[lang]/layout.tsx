@@ -8,6 +8,7 @@ import { ReactNode } from 'react';
 import Providers from '@/components/providers';
 import '@/styles/globals.css';
 import { getDictionary } from './dictionaries';
+import Header from '@/components/shared/header';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -37,7 +38,10 @@ export default async function RootLayout({
   return (
     <html lang={params.lang}>
       <body className={cn('min-h-screen', fontSans.variable, fontSans.className)}>
-        <Providers dictionary={dictionary}>{children}</Providers>
+        <Providers dictionary={dictionary}>
+          <Header lang={params.lang} />
+          {children}
+        </Providers>
         <Toaster />
       </body>
     </html>

@@ -8,5 +8,18 @@
     "enterUsername": "Enter username",
     "enterPassword": "Enter password",
     "submit": "Sign in"
+  },
+  "header": {
+    "stationList": "Station list",
+    "services": "Services",
+    "guides": "Guides",
+    "prices": "Prices",
+    "benefits": "Benefits",
+    "news": "News",
+    "contact": "Contact",
+    "vietnamese": "Vietnamese",
+    "english": "English",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
   }
 }
