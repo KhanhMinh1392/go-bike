@@ -2,14 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
-const headers = { 'accept-language': 'en,en;q=0.5' };
-const languages = new Negotiator({ headers }).languages();
 const locales = ['en', 'vi'];
 const defaultLocale = 'en';
 
 // Get the preferred locale, similar to the above or using a library
 function getLocale(request: NextRequest) {
-  return match(languages, locales, defaultLocale);
+  const negotiatorHeaders: Record<string, string> = {};
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
+
+  const languages = new Negotiator({headers: negotiatorHeaders}).languages(locales)
+
+  const locale = match(languages, locales, defaultLocale);
+
+  return locale
 }
 
 export function middleware(request: NextRequest) {
@@ -28,7 +33,6 @@ export function middleware(request: NextRequest) {
   if (cookies?.value !== "") {
     return NextResponse.redirect(request.nextUrl);
   }
-  console.log("dda ve")
   return NextResponse.redirect(request.nextUrl + '/sign-in');
 }
 
