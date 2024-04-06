@@ -10,12 +10,11 @@ import {
 } from '../ui/navigation-menu';
 import SwitchLanguage from './switch-lang';
 import { getDictionary } from '@/app/[lang]/dictionaries';
-import { cookies } from 'next/headers';
 
 export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
   const dict = await getDictionary(lang);
   return (
-    <header className="fixed inset-x-0 top-0">
+    <header className="fixed inset-x-0 top-0 z-50">
       <NavigationMenu className="w-full p-6 font-medium text-white">
         <NavigationMenuList className="space-x-2">
           <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">
