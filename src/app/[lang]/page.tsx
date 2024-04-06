@@ -10,11 +10,11 @@ export default async function Page({ params: { lang } }: { params: { lang: TLang
   const dict = await getDictionary(lang);
   return (
     <main>
-      <section>
-        <Image src={Thumbnail} alt="thumbnail" className="relative h-auto w-full object-cover" priority />
+      <section className="relative">
+        <Image src={Thumbnail} alt="thumbnail" className="h-auto w-full object-cover" priority />
         <article className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src={Logo} alt="logo" className="mb-[4.5rem] h-auto w-full object-cover" />
-          <p className="w-[38.125rem] text-center text-lg font-medium text-white mx-auto">
+          <Image src={Logo} alt="logo" className="mb-[4.5rem] h-auto w-auto object-cover" />
+          <p className="mx-auto w-[38.125rem] text-center text-lg font-medium text-white">
             Dịch vụ xe đạp công cộng GoBike đem đến một hình thức giao thông đô thị mới văn minh, tiện lợi, tiết kiệm,
             tốt cho sức khỏe và thân thiện với môi trường.
           </p>
