@@ -37,7 +37,7 @@ export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer rounded-xl bg-white px-4 py-[0.625rem]">
             <Link href={`/${lang}/sign-in`} legacyBehavior passHref>
-              <NavigationMenuLink className={'text-lg font-medium text-green-600'}>
+              <NavigationMenuLink className={'text-lg font-medium text-green-700'}>
                 {dict.header.signIn}
               </NavigationMenuLink>
             </Link>
