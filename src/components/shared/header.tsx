@@ -17,21 +17,33 @@ export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
     <header className="fixed inset-x-0 top-0 z-50">
       <NavigationMenu className="w-full p-6 font-medium text-white">
         <NavigationMenuList className="space-x-2">
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
             {dict.header.stationList}
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">{dict.header.services}</NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">{dict.header.guides}</NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">{dict.header.prices}</NavigationMenuItem>
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+            {dict.header.services}
+          </NavigationMenuItem>
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+            {dict.header.guides}
+          </NavigationMenuItem>
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+            {dict.header.prices}
+          </NavigationMenuItem>
         </NavigationMenuList>
         <NavigationMenuList className="space-x-2">
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">{dict.header.benefits}</NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">{dict.header.news}</NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem]">{dict.header.contact}</NavigationMenuItem>
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+            {dict.header.benefits}
+          </NavigationMenuItem>
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+            {dict.header.news}
+          </NavigationMenuItem>
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+            {dict.header.contact}
+          </NavigationMenuItem>
           <NavigationMenuItem className="px-4 py-[0.625rem]">
             <NavigationMenuTrigger className="flex cursor-pointer items-center space-x-[0.375rem]">
               <GlobalIcon />
-              <span>{lang === 'vi' ? dict.header.vietnamese : dict.header.english}</span>
+              <span className="text-lg">{lang === 'vi' ? dict.header.vietnamese : dict.header.english}</span>
             </NavigationMenuTrigger>
             <SwitchLanguage lang={lang} />
           </NavigationMenuItem>
