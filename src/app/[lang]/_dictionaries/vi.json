@@ -21,5 +21,8 @@
     "english": "Tiếng Anh",
     "signIn": "Đăng nhập",
     "signOut": "Đăng xuất"
+  },
+  "landing-page": {
+    "intro": "Dịch vụ xe đạp công cộng GoBike đem đến một hình thức giao thông đô thị mới văn minh, tiện lợi, tiết kiệm, tốt cho sức khỏe và thân thiện với môi trường."
   }
 }

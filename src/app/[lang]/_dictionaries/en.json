@@ -21,5 +21,8 @@
     "english": "English",
     "signIn": "Sign in",
     "signOut": "Sign out"
+  },
+  "landing-page": {
+    "intro": "GoBike public bicycle service brings a new form of urban transportation that is civilized, convenient, economical, good for health and environmentally friendly."
   }
 }
