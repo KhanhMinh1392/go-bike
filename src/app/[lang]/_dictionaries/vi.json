@@ -10,11 +10,11 @@
     "submit": "Đăng nhập"
   },
   "header": {
-    "stationList": "Danh sách trạm",
+    "stations": "Danh sách trạm",
     "services": "Dịch vụ",
-    "guides": "Hướng dẫn",
+    "guides": "Hướng dẫn sử dụng",
     "prices": "Bảng giá",
-    "benefits": "Ưu đãi",
+    "promotions": "Ưu đãi",
     "news": "Tin tức",
     "contact": "Liên hệ",
     "vietnamese": "Tiếng Việt",

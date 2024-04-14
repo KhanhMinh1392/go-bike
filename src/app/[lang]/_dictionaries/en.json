@@ -10,11 +10,11 @@
     "submit": "Sign in"
   },
   "header": {
-    "stationList": "Station list",
+    "stations": "Stations",
     "services": "Services",
-    "guides": "Guides",
+    "guides": "User manual",
     "prices": "Prices",
-    "benefits": "Benefits",
+    "promotions": "Promotions",
     "news": "News",
     "contact": "Contact",
     "vietnamese": "Vietnamese",
