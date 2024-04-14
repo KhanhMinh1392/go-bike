@@ -15,41 +15,43 @@ export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
   const dict = await getDictionary(lang);
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <NavigationMenu className="w-full p-6 font-medium text-white">
+      <NavigationMenu className="w-full px-10 py-6 font-medium text-white">
         <NavigationMenuList className="space-x-2">
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
-            {dict.header.stationList}
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
+            {dict.header.stations}
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
             {dict.header.services}
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
             {dict.header.guides}
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
             {dict.header.prices}
           </NavigationMenuItem>
         </NavigationMenuList>
         <NavigationMenuList className="space-x-2">
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
-            {dict.header.benefits}
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
+            {dict.header.promotions}
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
             {dict.header.news}
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-lg">
+          <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
             {dict.header.contact}
           </NavigationMenuItem>
           <NavigationMenuItem className="px-4 py-[0.625rem]">
             <NavigationMenuTrigger className="flex cursor-pointer items-center space-x-[0.375rem]">
               <GlobalIcon />
-              <span className="text-lg">{lang === 'vi' ? dict.header.vietnamese : dict.header.english}</span>
+              <span className="text-base font-medium">
+                {lang === 'vi' ? dict.header.vietnamese : dict.header.english}
+              </span>
             </NavigationMenuTrigger>
             <SwitchLanguage lang={lang} />
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer rounded-xl bg-white px-4 py-[0.625rem]">
+          <NavigationMenuItem className="cursor-pointer rounded-full bg-white px-4 py-[0.625rem]">
             <Link href={`/${lang}/sign-in`} legacyBehavior passHref>
-              <NavigationMenuLink className={'text-lg font-medium text-green-700'}>
+              <NavigationMenuLink className={'text-base font-medium text-green-700'}>
                 {dict.header.signIn}
               </NavigationMenuLink>
             </Link>
