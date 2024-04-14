@@ -31,7 +31,7 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
           </p>
           <div className="mt-10 flex items-center justify-center gap-3">
             <Image src={GooglePlay} alt="google_play" width={149} height={44} className="h-11 object-cover" priority />
-            <Image src={AppStore} alt="app_store" width={149} height={44} className="h-11 object-cover" priority />
+            <Image src={AppStore} alt="app_store" width={132} height={44} className="h-11 object-cover" priority />
           </div>
         </section>
       </article>
