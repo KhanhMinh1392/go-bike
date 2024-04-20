@@ -1,5 +1,5 @@
 {
-  "name": "bike-go",
+  "name": "go-bike",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -24,12 +24,14 @@
     "clsx": "^2.1.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "framer-motion": "^11.0.25",
     "negotiator": "^0.6.3",
     "next": "14.1.4",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.2",
+    "sharp": "^0.33.3",
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",

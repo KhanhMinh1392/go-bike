@@ -1,14 +1,14 @@
 import Image from 'next/image';
 
-// import About from '@/assets/images/about.png';
-// import Frame from '@/assets/images/frame.png';
+import About from '@/assets/images/about.png';
+import Frame from '@/assets/images/frame.png';
 import AppStore from '@/assets/images/app_store.png';
 import GooglePlay from '@/assets/images/google_play.png';
 import Logo from '@/assets/images/logo.png';
-// import StepAnimation from '@/components/animations/step-animate';
+import StepAnimation from '@/components/animations/step-animate';
 import { TLanguage } from '@/types/common';
 import { getDictionary } from './dictionaries';
-// import { ArrowIcon } from '@/components/icons';
+import { ArrowIcon } from '@/components/icons';
 interface ILandingPage {
   params: {
     lang: TLanguage;
@@ -25,17 +25,17 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
           <source src="/assets/video/cover.mp4" type="video/mp4" />
         </video>
         <section className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src={Logo} alt="logo" className="mb-[4.5rem] object-cover" priority />
+          <Image src={Logo} alt="logo" width={0} height={0} className="mb-[4.5rem] object-cover" priority />
           <p className="mx-auto w-[38.125rem] text-center text-lg font-normal text-white">
             {dict['landing-page'].intro}
           </p>
           <div className="mt-10 flex items-center justify-center gap-3">
-            <Image src={GooglePlay} alt="google_play" width={149} height={44} className="h-11 object-cover" priority />
-            <Image src={AppStore} alt="app_store" width={132} height={44} className="h-11 object-cover" priority />
+            <Image src={GooglePlay} alt="google_play" width={0} height={0} className="h-11 object-cover" priority />
+            <Image src={AppStore} alt="app_store" width={0} height={0} className="h-11 object-cover" priority />
           </div>
         </section>
       </article>
-      {/* <article className="relative top-0 flex h-[1080px] flex-col items-center">
+      <article className="relative top-0 flex h-[1080px] flex-col items-center">
         <section className="container flex h-[760px] items-center justify-between gap-40">
           <div>
             <h1 className="mb-8 text-5xl font-extrabold">
@@ -128,7 +128,7 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
           </div>
         </section>
       </article>
-      <article className="h-[1080px]"></article> */}
+      <article className="h-[1080px]"></article>
     </main>
   );
 }

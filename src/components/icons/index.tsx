@@ -41,4 +41,13 @@ const CheckIcon = () => {
   );
 };
 
-export { GlobalIcon, ChevronIcon, CheckIcon };
+const ArrowIcon = () => {
+  return (
+    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 7H14" stroke="#F2F3D3" strokeWidth="2" />
+      <path d="M8 1L14 7L8 13" stroke="#F2F3D3" strokeWidth="2" />
+    </svg>
+  );
+};
+
+export { GlobalIcon, ChevronIcon, CheckIcon, ArrowIcon };
