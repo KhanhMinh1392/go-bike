@@ -10,6 +10,7 @@ import {
 } from '../ui/navigation-menu';
 import SwitchLanguage from './switch-lang';
 import { getDictionary } from '@/app/[lang]/dictionaries';
+import SignIn from '../sign-in';
 
 export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
   const dict = await getDictionary(lang);
@@ -49,12 +50,8 @@ export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
             </NavigationMenuTrigger>
             <SwitchLanguage lang={lang} />
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer rounded-full bg-white px-4 py-[0.625rem]">
-            <Link href={`/${lang}/sign-in`} legacyBehavior passHref>
-              <NavigationMenuLink className={'text-base font-medium text-green-700'}>
-                {dict.header.signIn}
-              </NavigationMenuLink>
-            </Link>
+          <NavigationMenuItem>
+            <SignIn/>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

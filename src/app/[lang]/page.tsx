@@ -8,6 +8,7 @@ import Logo from '@/assets/images/logo.png';
 // import StepAnimation from '@/components/animations/step-animate';
 import { TLanguage } from '@/types/common';
 import { getDictionary } from './dictionaries';
+import SignIn from '@/components/sign-in';
 // import { ArrowIcon } from '@/components/icons';
 interface ILandingPage {
   params: {
