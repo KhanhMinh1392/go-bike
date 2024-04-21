@@ -68,9 +68,12 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply m-0 box-border p-0;
+  }
+  html {
+    @apply scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply overflow-y-auto;
   }
 }
