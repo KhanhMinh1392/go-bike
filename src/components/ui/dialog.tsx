@@ -42,9 +42,10 @@ const DialogContent = React.forwardRef<
         className
       )}
       {...props}
+      onOpenAutoFocus={(e) => e.preventDefault()}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-3 top-3 p-[.625rem] rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+      <DialogPrimitive.Close className="absolute right-3 top-3 p-[.625rem] rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
         <Cross2Icon className="h-6 w-6" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>

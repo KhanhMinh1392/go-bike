@@ -22,12 +22,12 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
   return (
     <main>
       <article className="relative">
-        <video autoPlay loop muted className="h-full w-full object-cover" preload="none">
+        <video autoPlay loop muted className="h-auto w-full object-cover" preload="none">
           <source src="/assets/video/cover.mp4" type="video/mp4" />
         </video>
         <section className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src={Logo} alt="logo" className="mb-[4.5rem] object-cover" priority />
-          <p className="mx-auto w-[38.125rem] text-center text-lg font-normal text-white">
+          <Image src={Logo} alt="logo" width={0} height={0} className="w-auto h-auto mb-[4.5rem] object-cover" priority />
+          <p className="mx-auto text-center text-base font-normal text-white md:text-lg md:w-[38.125rem]">
             {dict['landing-page'].intro}
           </p>
           <div className="mt-10 flex items-center justify-center gap-3">
