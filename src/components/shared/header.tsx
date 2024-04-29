@@ -1,21 +1,19 @@
+import { getDictionary } from '@/app/[lang]/dictionaries';
 import { TLanguage } from '@/types/common';
-import Link from 'next/link';
 import { GlobalIcon } from '../icons';
+import SignIn from '../sign-in';
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
+  NavigationMenuTrigger
 } from '../ui/navigation-menu';
 import SwitchLanguage from './switch-lang';
-import { getDictionary } from '@/app/[lang]/dictionaries';
-import SignIn from '../sign-in';
 
 export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
   const dict = await getDictionary(lang);
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="fixed inset-x-0 top-0 z-50 hidden md:block">
       <NavigationMenu className="w-full px-10 py-6 font-medium text-white">
         <NavigationMenuList className="space-x-2">
           <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
@@ -51,7 +49,7 @@ export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
             <SwitchLanguage lang={lang} />
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <SignIn/>
+            <SignIn />
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

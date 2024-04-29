@@ -42,7 +42,7 @@ export default async function RootLayout({
   const dictionary = await getDictionary(params.lang);
   return (
     <html lang={params.lang}>
-      <body className={cn('min-h-screen', fontSans.variable, fontSans.className)}>
+      <body className={cn('min-h-screen w-full', fontSans.variable, fontSans.className)}>
         <Providers dictionary={dictionary}>
           <Header lang={params.lang} />
           {children}
