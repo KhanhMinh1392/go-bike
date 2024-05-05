@@ -20,12 +20,17 @@ const config = {
       colors: {
         green: {
           400: '#38AF53',
+          500: '#299040'
         },
         gray: {
           200: '#E4E4E7',
           300: '#D1D1D6',
+          700: '#3F3F46',
           800: '#26272B',
         },
+        red: {
+          500: "#F04438"
+        }
       },
       borderRadius: {
         lg: 'var(--radius)',

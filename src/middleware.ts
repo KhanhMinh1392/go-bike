@@ -20,7 +20,6 @@ function getLocale(request: NextRequest) {
 export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
-  const cookies = request.cookies.get('token');
 
   const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
   if (pathnameHasLocale) return;
@@ -30,10 +29,7 @@ export function middleware(request: NextRequest) {
   request.nextUrl.pathname = `/${locale}${pathname}`;
   // e.g. incoming request is /products
   // The new URL is now /en-US/products
-  if (cookies?.value !== "") {
-    return NextResponse.redirect(request.nextUrl);
-  }
-  return NextResponse.redirect(request.nextUrl + '/sign-in');
+  return NextResponse.redirect(request.nextUrl);
 }
 
 export const config = {

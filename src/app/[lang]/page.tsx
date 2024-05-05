@@ -26,8 +26,15 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
           <source src="/assets/video/cover.mp4" type="video/mp4" />
         </video>
         <section className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Image src={Logo} alt="logo" width={0} height={0} className="w-auto h-auto mb-[4.5rem] object-cover" priority />
-          <p className="mx-auto text-center text-base font-normal text-white md:text-lg md:w-[38.125rem]">
+          <Image
+            src={Logo}
+            alt="logo"
+            width={0}
+            height={0}
+            className="mb-[4.5rem] h-auto w-auto object-cover"
+            priority
+          />
+          <p className="mx-auto text-center text-base font-normal text-white md:w-[38.125rem] md:text-lg">
             {dict['landing-page'].intro}
           </p>
           <div className="mt-10 flex items-center justify-center gap-3">

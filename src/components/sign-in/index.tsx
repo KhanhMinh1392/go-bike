@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import GInput from '../inputs';
 import { Button } from '../ui/button';
 import { Checkbox } from '../ui/checkbox';
@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogT
 import { useDictionary } from '../providers';
 
 export default function SignIn() {
-  const dict = useDictionary()
+  const dict = useDictionary();
   return (
     <Dialog>
       <DialogTrigger asChild className="cursor-pointer rounded-full bg-white px-4 py-[0.625rem]">
@@ -14,13 +14,19 @@ export default function SignIn() {
       </DialogTrigger>
       <DialogContent className="w-[624px]">
         <DialogHeader>
-          <DialogTitle className="text-4xl font-semibold leading-11 text-gray-800">{dict['sign-in'].title}</DialogTitle>
+          <DialogTitle className="text-3xl font-semibold leading-11 text-gray-800">{dict['sign-in'].title}</DialogTitle>
         </DialogHeader>
-        <div className="grid gap-4 py-8">
-          <GInput id="account" label={dict['sign-in'].username} placeholder={dict['sign-in'].username} />
-          <GInput id="password" type="password" label={dict['sign-in'].password} placeholder={dict['sign-in'].password} />
+        <div className="grid gap-4 py-7">
+          <GInput isRequired id="account" label={dict['sign-in'].username} placeholder={dict['sign-in'].username} />
+          <GInput
+            isRequired
+            id="password"
+            type="password"
+            label={dict['sign-in'].password}
+            placeholder={dict['sign-in'].password}
+          />
         </div>
-        <div className="mb-8 flex items-center space-x-5">
+        <div className="mb-7 flex items-center space-x-5">
           <Checkbox id="agree" />
           <label
             htmlFor="agree"
@@ -37,7 +43,7 @@ export default function SignIn() {
           </label>
         </div>
         <DialogFooter>
-          <Button disabled className="w-[560px] text-xl font-semibold" size={'lg'} type="submit">
+          <Button className="w-[560px] text-base font-semibold" size={'lg'} type="submit">
             {dict['sign-in'].submit}
           </Button>
         </DialogFooter>
