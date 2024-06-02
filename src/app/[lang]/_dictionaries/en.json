@@ -23,6 +23,34 @@
     "signOut": "Sign out"
   },
   "landing-page": {
-    "intro": "GoBike public bicycle service brings a new form of urban transportation that is civilized, convenient, economical, good for health and environmentally friendly."
+    "intro": "GoBike public bicycle service brings a new form of urban transportation that is civilized, convenient, economical, good for health and environmentally friendly.",
+    "price": {
+      "ourService": "Our service",
+      "title": "Price",
+      "description": "To solve the world’s biggest problems, we need all kinds of perspectives. That’s why our leadership team brings together experts in food, tech, and sustainability.",
+      "manualBike": "Manual Bike",
+      "electricBike": "Electric Bike",
+      "ticket": "Ticket",
+      "time": "Time",
+      "points": "Points",
+      "oneWay": "One-Way",
+      "day": "Day",
+      "minutes": "Mins",
+      "operationTime": "Operation time",
+      "operationTimeDesc": "Operating 24/7 (Operating hours may vary in some Provinces/Cities)",
+      "ticketDetail": "Ticket detail",
+      "durationOfUse": "Duration of use",
+      "validityPeriod": "Validity period",
+      "exceedTimeFee": "Exceeding time fee",
+      "conditions": "Conditions",
+      "minimumBalance": "Minimum balance",
+      "registerDay": "register day",
+      "fromRegistrationDay": "days from the date of registration",
+      "freeAllTraveling": "Free all travelings under"
+    }
+  },
+  "common": {
+    "minutes": "mins",
+    "points": "points"
   }
 }

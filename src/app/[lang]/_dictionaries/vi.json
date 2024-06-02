@@ -23,6 +23,34 @@
     "signOut": "Đăng xuất"
   },
   "landing-page": {
-    "intro": "Dịch vụ xe đạp công cộng GoBike đem đến một hình thức giao thông đô thị mới văn minh, tiện lợi, tiết kiệm, tốt cho sức khỏe và thân thiện với môi trường."
+    "intro": "Dịch vụ xe đạp công cộng GoBike đem đến một hình thức giao thông đô thị mới văn minh, tiện lợi, tiết kiệm, tốt cho sức khỏe và thân thiện với môi trường.",
+    "price": {
+      "ourService": "Dịch vụ của chúng tôi",
+      "title": "Bảng giá",
+      "description": "Để giải quyết vấn đề lớn nhất của thế giới hiện nay, chúng ta cần có nhiều quan điểm. Đó là lí do tại sao đội ngủ lãnh đạo của chúng tôi tập hợp các chuyên gia về ẩm thực, công nghệ, và tính bền vững.",
+      "manualBike": "Xe đạp cơ",
+      "electricBike": "Xe đạp điện",
+      "ticket": "Vé",
+      "time": "Lượt",
+      "points": "Điểm",
+      "oneWay": "Một chiều",
+      "day": "Ngày",
+      "minutes": "Phút",
+      "operationTime": "Thời gian cung cấp dịch vụ",
+      "operationTimeDesc": "Hoạt động 24/7 (Thời gian hoạt động có thể khác tại một số Tỉnh/Thành phố)",
+      "ticketDetail": "Chi tiết vé",
+      "durationOfUse": "Thời gian sử dụng",
+      "validityPeriod": "Thời hạn sử dụng",
+      "exceedTimeFee": "Cước phí quá thời lượng",
+      "conditions": "Điều kiện",
+      "minimumBalance": "Số dư tối thiểu",
+      "registerDay": "ngày đăng ký",
+      "fromRegistrationDay": "ngày kể từ ngày đăng ký",
+      "freeAllTraveling": "Miễn phí các chuyến đi dưới"
+    }
+  },
+  "common": {
+    "minutes": "phút",
+    "points": "điểm"
   }
 }

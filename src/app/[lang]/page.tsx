@@ -7,6 +7,7 @@ import { TLanguage } from '@/types/common';
 import { getDictionary } from './dictionaries';
 import About from '@/components/about';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CalendarHeartIcon, TicketIcon } from '@/components/icons';
 interface ILandingPage {
   params: {
     lang: TLanguage;
@@ -56,137 +57,184 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
       </section>
       <About />
       <section className="flex flex-col items-center justify-center">
-        <p className="text-lg font-medium uppercase">Dịch vụ của chúng tôi</p>
-        <h1 className="mb-6 mt-2 text-[4.875rem] font-extrabold text-gray-800">Bảng Giá</h1>
+        <p className="text-lg font-medium uppercase text-gray-800">{dict['landing-page'].price.ourService}</p>
+        <h1 className="mb-6 mt-2 text-[4.875rem] font-extrabold text-gray-800">{dict['landing-page'].price.title}</h1>
         <p className="mb-10 max-w-[599px] px-6 text-center text-lg font-normal text-gray-700 max-lg:line-clamp-2">
-          Để giải quyết vấn đề lớn nhất của thế giới hiện nay, chúng ta cần có nhiều quan điểm. Đó là lí do tại sao đội
-          ngủ lãnh đạo của chúng tôi tập hợp các chuyên gia về ẩm thực, công nghệ, và tính bền vững.
+          {dict['landing-page'].price.description}
         </p>
         <Tabs defaultValue="bike">
           <TabsList className="flex items-center justify-center">
-            <TabsTrigger value="bike">XE ĐẠP CƠ</TabsTrigger>
-            <TabsTrigger value="electric-bike">XE ĐẠP ĐIỆN</TabsTrigger>
+            <TabsTrigger value="bike" className="uppercase">
+              {dict['landing-page'].price.manualBike}
+            </TabsTrigger>
+            <TabsTrigger value="electric-bike" className="uppercase">
+              {dict['landing-page'].price.electricBike}
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="bike" className="mt-10 grid grid-cols-1 gap-5 xl:grid-cols-3">
-            <div className="h-[564px] w-[393px] rounded-lg bg-[#CBEAD1] text-gray-900">
+            <div className="h-[534px] w-[393px] rounded-lg bg-green-100 text-gray-900">
               <div className="relative border-b-4 border-dashed border-b-white">
                 <div className="grid grid-cols-2 px-9 py-[1.875rem]">
-                  <h3 className="text-[1.75rem] uppercase">Vé</h3>
-                  <h3 className="text-right text-[1.75rem] font-bold">10,000đ</h3>
-                  <h3 className="text-[1.75rem] font-bold uppercase">Lượt</h3>
-                  <h3 className="my-auto text-right text-xl">/60 Phút</h3>
+                  <h3 className="text-[1.75rem] font-normal uppercase text-gray-900">
+                    {dict['landing-page'].price.ticket}
+                  </h3>
+                  <h3 className="text-right text-[1.75rem] font-bold text-gray-900">10,000đ</h3>
+                  <h3 className="text-[1.75rem] font-bold uppercase text-gray-900">
+                    {dict['landing-page'].price.time}
+                  </h3>
+                  <h3 className="my-auto text-right text-xl text-gray-900">/60 {dict.common.minutes}</h3>
                 </div>
-                <div className="absolute -bottom-5 -left-5 aspect-square w-10 rounded-full bg-white"></div>
-                <div className="absolute -bottom-5 -right-5 aspect-square w-10 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -left-4 aspect-square w-7 rounded-full bg-white"></div>
+                <div className="absolute  -bottom-4 -right-4 aspect-square w-7 rounded-full bg-white"></div>
               </div>
               <div className="p-9">
-                <h6 className="mb-1 text-xl font-medium">Thời gian cung cấp dịch vụ</h6>
-                <p className="mb-6 text-lg font-medium">
-                  Hoạt động 24/7{' '}
-                  <span className="font-normal">(Thời gian hoạt động có thể khác tại một số Tỉnh/Thành phố)</span>
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-green-600">
+                  <CalendarHeartIcon />
+                  {dict['landing-page'].price.operationTime}
+                </h6>
+                <p className="mb-6 text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.operationTimeDesc}
                 </p>
-                <h6 className="mb-1 text-xl font-medium">Chi tiết vé</h6>
-                <p className="text-lg font-normal">
-                  Thời lượng sử dụng: 60 phút <br /> Thời hạn sử dụng: 60 phút <br /> Cước phí quá thời lượng: 3.000
-                  điểm / 15 phút <br /> Điều kiện: Số dư tối thiểu 20.000 điểm GoBike
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-green-600">
+                  <TicketIcon />
+                  {dict['landing-page'].price.ticketDetail}
+                </h6>
+                <p className="text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.durationOfUse}: 60 {dict.common.minutes} <br />
+                  {dict['landing-page'].price.validityPeriod}: 60 {dict.common.minutes} <br />
+                  {dict['landing-page'].price.exceedTimeFee}: 3.000 {dict.common.points} / 15 {dict.common.minutes}
+                  <br /> {dict['landing-page'].price.conditions}: {dict['landing-page'].price.minimumBalance} 20.000{' '}
+                  {dict.common.points} GoBike
                 </p>
               </div>
             </div>
-            <div className="h-[564px] w-[393px] rounded-lg bg-[#CBEAD1] text-gray-900">
+            <div className="h-[534px] w-[393px] rounded-lg bg-green-100 text-gray-900">
               <div className="relative border-b-4 border-dashed border-b-white">
                 <div className="grid grid-cols-2 px-9 py-[1.875rem]">
-                  <h3 className="text-[1.75rem] uppercase">Vé</h3>
+                  <h3 className="text-[1.75rem] uppercase">{dict['landing-page'].price.ticket}</h3>
                   <h3 className="text-right text-[1.75rem] font-bold">50,000đ</h3>
-                  <h3 className="text-[1.75rem] font-bold uppercase">Lượt</h3>
-                  <h3 className="my-auto text-right text-xl">/450Phút/Ngày</h3>
+                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.time}</h3>
+                  <h3 className="my-auto text-nowrap text-right text-xl">
+                    /450 {dict['landing-page'].price.minutes}/{dict['landing-page'].price.day}
+                  </h3>
                 </div>
-                <div className="absolute -bottom-5 -left-5 aspect-square w-10 rounded-full bg-white"></div>
-                <div className="absolute -bottom-5 -right-5 aspect-square w-10 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -left-4 aspect-square w-7 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -right-4 aspect-square w-7 rounded-full bg-white"></div>
               </div>
               <div className="p-9">
-                <h6 className="mb-1 text-xl font-medium">Thời gian cung cấp dịch vụ</h6>
-                <p className="mb-6 text-lg font-medium">
-                  Hoạt động 24/7{' '}
-                  <span className="font-normal">(Thời gian hoạt động có thể khác tại một số Tỉnh/Thành phố)</span>
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-green-600">
+                  <CalendarHeartIcon />
+                  {dict['landing-page'].price.operationTime}
+                </h6>
+                <p className="mb-6 text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.operationTimeDesc}
                 </p>
-                <h6 className="mb-1 text-xl font-medium">Chi tiết vé</h6>
-                <p className="text-lg font-normal">
-                  Thời lượng sử dụng: 450 phút <br /> Thời hạn sử dụng: 24h ngày đăng ký <br /> Cước phí quá thời lượng:
-                  3.000 điểm / 15 phút
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-green-600">
+                  <TicketIcon />
+                  {dict['landing-page'].price.ticketDetail}
+                </h6>
+                <p className="text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.durationOfUse}: 450 {dict.common.minutes} <br />
+                  {dict['landing-page'].price.validityPeriod}: 24h {dict['landing-page'].price.registerDay} <br />
+                  {dict['landing-page'].price.exceedTimeFee}: 3.000 {dict.common.points} / 15 {dict.common.minutes}
                 </p>
               </div>
             </div>
-            <div className="h-[564px] w-[393px] rounded-lg bg-[#CBEAD1] text-gray-900">
+            <div className="h-[534px] w-[393px] rounded-lg bg-green-100 text-gray-900">
               <div className="relative border-b-4 border-dashed border-b-white">
                 <div className="grid grid-cols-2 px-9 py-[1.875rem]">
-                  <h3 className="text-[1.75rem] uppercase">Vé</h3>
+                  <h3 className="text-[1.75rem] uppercase"> {dict['landing-page'].price.ticket}</h3>
                   <h3 className="text-right text-[1.75rem] font-bold">79,000</h3>
-                  <h3 className="text-[1.75rem] font-bold uppercase">Lượt</h3>
-                  <h3 className="my-auto text-right text-xl">Điểm</h3>
+                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.time}</h3>
+                  <h3 className="my-auto text-right text-xl">{dict['landing-page'].price.points}</h3>
                 </div>
-                <div className="absolute -bottom-5 -left-5 aspect-square w-10 rounded-full bg-white"></div>
-                <div className="absolute -bottom-5 -right-5 aspect-square w-10 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -left-4 aspect-square w-7 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -right-4 aspect-square w-7 rounded-full bg-white"></div>
               </div>
               <div className="p-9">
-                <h6 className="mb-1 text-xl font-medium">Thời gian cung cấp dịch vụ</h6>
-                <p className="mb-6 text-lg font-medium">
-                  Hoạt động 24/7{' '}
-                  <span className="font-normal">(Thời gian hoạt động có thể khác tại một số Tỉnh/Thành phố)</span>
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-green-600">
+                  <CalendarHeartIcon />
+                  {dict['landing-page'].price.operationTime}
+                </h6>
+                <p className="mb-6 text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.operationTimeDesc}
                 </p>
-                <h6 className="mb-1 text-xl font-medium">Chi tiết vé</h6>
-                <p className="text-lg font-normal">
-                  Thời lượng sử dụng: Miễn phí các chuyến đi dưới 45 phút <br /> Thời hạn sử dụng: 30 ngày kể từ ngày
-                  đăng ký <br /> Cước phí quá thời lượng: 3.000 điểm / 15 phút
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-green-600">
+                  <TicketIcon />
+                  {dict['landing-page'].price.ticketDetail}
+                </h6>
+                <p className="text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.durationOfUse}: {dict['landing-page'].price.freeAllTraveling} 45{' '}
+                  {dict.common.minutes}
+                  <br />
+                  {dict['landing-page'].price.validityPeriod}: 30 {dict['landing-page'].price.fromRegistrationDay}{' '}
+                  <br />
+                  {dict['landing-page'].price.exceedTimeFee}: 3.000 {dict.common.points} / 15 {dict.common.minutes}
                 </p>
               </div>
             </div>
           </TabsContent>
           <TabsContent value="electric-bike" className="grid grid-cols-1 gap-5 xl:grid-cols-2">
-            <div className="h-[564px] w-[393px] rounded-lg bg-[#F0F1C7] text-gray-900">
+            <div className="bg-sands-100 h-[534px] w-[393px] rounded-lg text-gray-900">
               <div className="relative border-b-4 border-dashed border-b-white">
                 <div className="grid grid-cols-2 px-9 py-[1.875rem]">
-                  <h3 className="text-[1.75rem] uppercase">Vé</h3>
-                  <h3 className="text-right text-[1.75rem] font-bold">80,000đ</h3>
-                  <h3 className="text-[1.75rem] font-bold uppercase">Lượt</h3>
-                  <h3 className="my-auto text-right text-xl">/60 Phút</h3>
+                  <h3 className="text-[1.75rem] uppercase">{dict['landing-page'].price.oneWay}</h3>
+                  <h3 className="text-right text-[1.75rem] font-bold">80,000</h3>
+                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.ticket}</h3>
+                  <h3 className="my-auto text-right text-xl">{dict['landing-page'].price.points}</h3>
                 </div>
-                <div className="absolute -bottom-5 -left-5 aspect-square w-10 rounded-full bg-white"></div>
-                <div className="absolute -bottom-5 -right-5 aspect-square w-10 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -left-4 aspect-square w-7 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -right-4 aspect-square w-7 rounded-full bg-white"></div>
               </div>
               <div className="p-9">
-                <h6 className="mb-1 text-xl font-medium">Thời gian cung cấp dịch vụ</h6>
-                <p className="mb-6 text-lg font-medium">
-                  Hoạt động 24/7{' '}
-                  <span className="font-normal">(Thời gian hoạt động có thể khác tại một số Tỉnh/Thành phố)</span>
+                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                  <CalendarHeartIcon className="[&>path]:stroke-sands-600" />
+                  {dict['landing-page'].price.operationTime}
+                </h6>
+                <p className="mb-6 text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.operationTimeDesc}
                 </p>
-                <h6 className="mb-1 text-xl font-medium">Chi tiết vé</h6>
-                <p className="text-lg font-normal">
-                  Thời lượng sử dụng: 60 phút <br /> Thời hạn sử dụng: 60 phút <br /> Cước phí quá thời lượng: 3.000
-                  điểm / 15 phút <br /> Điều kiện: Số dư tối thiểu 20.000 điểm GoBike
+                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                  <TicketIcon className="[&>path]:stroke-sands-600" />
+                  {dict['landing-page'].price.ticketDetail}
+                </h6>
+                <p className="text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.durationOfUse}: 60 {dict.common.minutes} <br />
+                  {dict['landing-page'].price.validityPeriod}: 60 {dict.common.minutes} <br />
+                  {dict['landing-page'].price.validityPeriod}: 3.000 {dict.common.points} / 15 {dict.common.minutes}
+                  <br />
+                  {dict['landing-page'].price.conditions}: {dict['landing-page'].price.minimumBalance} 20.000{' '}
+                  {dict.common.points} GoBike
                 </p>
               </div>
             </div>
-            <div className="w-[393px] rounded-lg bg-[#F0F1C7] text-gray-900">
+            <div className="bg-sands-100 h-[534px] w-[393px] rounded-lg text-gray-900">
               <div className="relative border-b-4 border-dashed border-b-white">
                 <div className="grid grid-cols-2 px-9 py-[1.875rem]">
-                  <h3 className="text-[1.75rem] uppercase">Vé</h3>
-                  <h3 className="text-right text-[1.75rem] font-bold">100,000đ</h3>
-                  <h3 className="text-[1.75rem] font-bold uppercase">Lượt</h3>
-                  <h3 className="my-auto text-right text-xl">/450Phút/Ngày</h3>
+                  <h3 className="text-[1.75rem] uppercase">{dict['landing-page'].price.day}</h3>
+                  <h3 className="text-right text-[1.75rem] font-bold">100,000</h3>
+                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.ticket}</h3>
+                  <h3 className="my-auto text-right text-xl">{dict['landing-page'].price.points}</h3>
                 </div>
-                <div className="absolute -bottom-5 -left-5 aspect-square w-10 rounded-full bg-white"></div>
-                <div className="absolute -bottom-5 -right-5 aspect-square w-10 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -left-4 aspect-square w-7 rounded-full bg-white"></div>
+                <div className="absolute -bottom-4 -right-4 aspect-square w-7 rounded-full bg-white"></div>
               </div>
               <div className="p-9">
-                <h6 className="mb-1 text-xl font-medium">Thời gian cung cấp dịch vụ</h6>
-                <p className="mb-6 text-lg font-medium">
-                  Hoạt động 24/7{' '}
-                  <span className="font-normal">(Thời gian hoạt động có thể khác tại một số Tỉnh/Thành phố)</span>
+                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                  <CalendarHeartIcon className="[&>path]:stroke-sands-600" />
+                  {dict['landing-page'].price.operationTime}
+                </h6>
+                <p className="mb-6 text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.operationTimeDesc}
                 </p>
-                <h6 className="mb-1 text-xl font-medium">Chi tiết vé</h6>
-                <p className="text-lg font-normal">
-                  Thời lượng sử dụng: 450 phút <br /> Thời hạn sử dụng: 24h ngày đăng ký <br /> Cước phí quá thời lượng:
-                  3.000 điểm / 15 phút
+                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                  <TicketIcon className="[&>path]:stroke-sands-600" />
+                  {dict['landing-page'].price.ticketDetail}
+                </h6>
+                <p className="text-base font-normal text-gray-900">
+                  {dict['landing-page'].price.durationOfUse}: 450 {dict.common.minutes} <br />
+                  {dict['landing-page'].price.validityPeriod}: 24h {dict['landing-page'].price.registerDay} <br />
+                  {dict['landing-page'].price.validityPeriod}: 3.000 {dict.common.points} / 15 {dict.common.minutes}
                 </p>
               </div>
             </div>
