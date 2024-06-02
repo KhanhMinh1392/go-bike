@@ -1,19 +1,32 @@
-import { getDictionary } from '@/app/[lang]/dictionaries';
+'use client';
 import { TLanguage } from '@/types/common';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { useState } from 'react';
 import { GlobalIcon } from '../icons';
+import { useDictionary } from '../providers';
 import SignIn from '../sign-in';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger
-} from '../ui/navigation-menu';
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu';
 import SwitchLanguage from './switch-lang';
 
-export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
-  const dict = await getDictionary(lang);
+export default function Header({ lang }: Readonly<{ lang: TLanguage }>) {
+  const dict = useDictionary();
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setHidden(latest > 0);
+  });
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 hidden md:block">
+    <motion.header
+      className="fixed inset-x-0 top-0 z-50 hidden md:block"
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: '-100%' },
+      }}
+      animate={hidden ? 'hidden' : 'visible'}
+      transition={{ duration: 0.35, ease: 'easeInOut' }}
+    >
       <NavigationMenu className="w-full px-10 py-6 font-medium text-white">
         <NavigationMenuList className="space-x-2">
           <NavigationMenuItem className="cursor-pointer px-4 py-[0.625rem] text-base">
@@ -53,6 +66,6 @@ export default async function Header({ lang }: Readonly<{ lang: TLanguage }>) {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-    </header>
+    </motion.header>
   );
 }

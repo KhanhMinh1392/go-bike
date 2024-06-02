@@ -10,16 +10,11 @@ const withPWA = withPWAInit({
   workboxOptions: {
     disableDevLogs: true
   }
-  // disable: process.env.NODE_ENV === "development",
-  // register: true,
-  // scope: "/app",
-  // sw: "service-worker.js",
-  //...
 });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withPWA({
-
+  reactStrictMode: true,
 });
 
 export default nextConfig;

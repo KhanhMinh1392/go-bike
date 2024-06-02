@@ -77,3 +77,10 @@
     @apply overflow-y-auto;
   }
 }
+
+.dotted-gradient {
+  background-image: linear-gradient(to right, #333 40%, rgba(255, 255, 255, 0) 20%);
+  background-position: top;
+  background-size: 60px 4px;
+  background-repeat: repeat-x;
+}
