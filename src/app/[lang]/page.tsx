@@ -56,8 +56,8 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
         </article>
       </section>
       <About />
-      <section className="flex flex-col items-center justify-center">
-        <p className="text-lg font-medium uppercase text-gray-800">{dict['landing-page'].price.ourService}</p>
+      <section className="flex h-[1080px] flex-col items-center justify-center">
+        <p className="text-lg font-semibold uppercase text-green-500">{dict['landing-page'].price.ourService}</p>
         <h1 className="mb-6 mt-2 text-[4.875rem] font-extrabold text-gray-800">{dict['landing-page'].price.title}</h1>
         <p className="mb-10 max-w-[599px] px-6 text-center text-lg font-normal text-gray-700 max-lg:line-clamp-2">
           {dict['landing-page'].price.description}
@@ -175,26 +175,26 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
             </div>
           </TabsContent>
           <TabsContent value="electric-bike" className="grid grid-cols-1 gap-5 xl:grid-cols-2">
-            <div className="bg-sands-100 h-[534px] w-[393px] rounded-lg text-gray-900">
+            <div className="h-[534px] w-[393px] rounded-lg bg-sands-100 text-gray-900">
               <div className="relative border-b-4 border-dashed border-b-white">
                 <div className="grid grid-cols-2 px-9 py-[1.875rem]">
-                  <h3 className="text-[1.75rem] uppercase">{dict['landing-page'].price.oneWay}</h3>
+                  <h3 className="text-[1.75rem] uppercase">{dict['landing-page'].price.ticket}</h3>
                   <h3 className="text-right text-[1.75rem] font-bold">80,000</h3>
-                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.ticket}</h3>
+                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.oneWay}</h3>
                   <h3 className="my-auto text-right text-xl">{dict['landing-page'].price.points}</h3>
                 </div>
                 <div className="absolute -bottom-4 -left-4 aspect-square w-7 rounded-full bg-white"></div>
                 <div className="absolute -bottom-4 -right-4 aspect-square w-7 rounded-full bg-white"></div>
               </div>
               <div className="p-9">
-                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-sands-600">
                   <CalendarHeartIcon className="[&>path]:stroke-sands-600" />
                   {dict['landing-page'].price.operationTime}
                 </h6>
                 <p className="mb-6 text-base font-normal text-gray-900">
                   {dict['landing-page'].price.operationTimeDesc}
                 </p>
-                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-sands-600">
                   <TicketIcon className="[&>path]:stroke-sands-600" />
                   {dict['landing-page'].price.ticketDetail}
                 </h6>
@@ -208,26 +208,26 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
                 </p>
               </div>
             </div>
-            <div className="bg-sands-100 h-[534px] w-[393px] rounded-lg text-gray-900">
+            <div className="h-[534px] w-[393px] rounded-lg bg-sands-100 text-gray-900">
               <div className="relative border-b-4 border-dashed border-b-white">
                 <div className="grid grid-cols-2 px-9 py-[1.875rem]">
-                  <h3 className="text-[1.75rem] uppercase">{dict['landing-page'].price.day}</h3>
+                  <h3 className="text-[1.75rem] uppercase">{dict['landing-page'].price.ticket}</h3>
                   <h3 className="text-right text-[1.75rem] font-bold">100,000</h3>
-                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.ticket}</h3>
+                  <h3 className="text-[1.75rem] font-bold uppercase">{dict['landing-page'].price.day}</h3>
                   <h3 className="my-auto text-right text-xl">{dict['landing-page'].price.points}</h3>
                 </div>
                 <div className="absolute -bottom-4 -left-4 aspect-square w-7 rounded-full bg-white"></div>
                 <div className="absolute -bottom-4 -right-4 aspect-square w-7 rounded-full bg-white"></div>
               </div>
               <div className="p-9">
-                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-sands-600">
                   <CalendarHeartIcon className="[&>path]:stroke-sands-600" />
                   {dict['landing-page'].price.operationTime}
                 </h6>
                 <p className="mb-6 text-base font-normal text-gray-900">
                   {dict['landing-page'].price.operationTimeDesc}
                 </p>
-                <h6 className="text-sands-600 mb-1 flex items-center gap-2 text-xl font-semibold">
+                <h6 className="mb-1 flex items-center gap-2 text-xl font-semibold text-sands-600">
                   <TicketIcon className="[&>path]:stroke-sands-600" />
                   {dict['landing-page'].price.ticketDetail}
                 </h6>
@@ -241,7 +241,29 @@ export default async function Page({ params }: Readonly<ILandingPage>) {
           </TabsContent>
         </Tabs>
       </section>
-      <section className="h-[1080px]"></section>
+      <section className="h-[1080px] p-[4.5rem]">
+        <div className="flex h-full items-center justify-center rounded-3xl bg-gray-100 px-[150px]">
+          <div className="w-[578px]">
+            <h4 className="mb-[.625rem] text-5xl font-extrabold text-green-800">Những con số</h4>
+            <h3 className="text-[4.875rem] italic text-green-500">biết nói</h3>
+          </div>
+          <div className='sticky'>
+            <div className="w-[878px] rounded-full bg-white py-6">
+              <h1 className="text-center text-[9.375rem] font-medium leading-[150px] text-green-500">6</h1>
+              <p className="text-center text-xl font-normal leading-8 text-[#3A3C42]">Tỉnh / Thành phố</p>
+            </div>
+            <div className="w-[878px] rounded-full bg-white py-6 hidden">
+              <h1 className="text-center text-[9.375rem] font-medium leading-[150px] text-green-500">6</h1>
+              <p className="text-center text-xl font-normal leading-8 text-[#3A3C42]">Tỉnh / Thành phố</p>
+            </div>
+            <div className="w-[878px] rounded-full bg-white py-6 hidden">
+              <h1 className="text-center text-[9.375rem] font-medium leading-[150px] text-green-500">6</h1>
+              <p className="text-center text-xl font-normal leading-8 text-[#3A3C42]">Tỉnh / Thành phố</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='h-[1080px]'></section>
     </main>
   );
 }
